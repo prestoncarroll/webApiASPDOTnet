@@ -7,7 +7,7 @@ using TodoApi.Models;
 
 namespace ToDoApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/TodoItems")]
     [ApiController]
     public class TodoItemsController : ControllerBase
     {
@@ -17,6 +17,8 @@ namespace ToDoApi.Controllers
         {
             _context = context;
         }
+
+        //-------------------------------------------------------------------------------
 
         // GET: api/TodoItems
         [HttpGet]
@@ -38,6 +40,8 @@ namespace ToDoApi.Controllers
 
             return todoItem;
         }
+
+        //-------------------------------------------------------------------------------
 
         // PUT: api/TodoItems/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
@@ -71,6 +75,8 @@ namespace ToDoApi.Controllers
             return NoContent();
         }
 
+        //------------------------------------------------------------------------------
+
         // POST: api/TodoItems
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
@@ -85,7 +91,7 @@ namespace ToDoApi.Controllers
 
 
 
-
+        //-----------------------------------------------------------------------------
         // DELETE: api/TodoItems/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<TodoItem>> DeleteTodoItem(long id)
